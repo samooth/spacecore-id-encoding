@@ -1,5 +1,5 @@
 const test = require('brittle')
-const Spacecore = require('../spacecore')
+const Spacecore = require('hypercore')
 const ram = require('random-access-memory')
 const b4a = require('b4a')
 const z32 = require('z32')
