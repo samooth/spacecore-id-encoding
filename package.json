@@ -26,7 +26,14 @@
     "url": "git+https://github.com/samooth/spacecore-id-encoding.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mathias Buus (@mafintosh)",  
+  "contributors": [
+    {
+      "name": "Tomás Díaz",
+      "email": "tomas@bsv.direct",
+      "url": "https://github.com/samooth"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/samooth/spacecore-id-encoding/issues"
   },
