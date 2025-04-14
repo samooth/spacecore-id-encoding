@@ -1,5 +1,5 @@
 const test = require('brittle')
-const Hypercore = require('hypercore')
+const Spacecore = require('../spacecore')
 const ram = require('random-access-memory')
 const b4a = require('b4a')
 const z32 = require('z32')
@@ -7,27 +7,27 @@ const z32 = require('z32')
 const { encode, decode, normalize, isValid } = require('.')
 
 test('encodes/decodes a key as z-base32', async t => {
-  const core = new Hypercore(ram)
+  const core = new Spacecore(ram)
   await core.ready()
-  const core2 = new Hypercore(ram, decode(encode(core.key)))
+  const core2 = new Spacecore(ram, decode(encode(core.key)))
   await core2.ready()
   t.alike(core2.key, core.key)
 })
 
 test('decodes a hex-encoded key', async t => {
-  const core = new Hypercore(ram)
+  const core = new Spacecore(ram)
   await core.ready()
   t.alike(decode(encode(core.key)), decode(b4a.toString(core.key, 'hex')))
 })
 
 test('decodes an unencoded key', async t => {
-  const core = new Hypercore(ram)
+  const core = new Spacecore(ram)
   await core.ready()
   t.alike(decode(core.key), core.key)
 })
 
 test('decodes an unencoded key', async t => {
-  const core = new Hypercore(ram)
+  const core = new Spacecore(ram)
   await core.ready()
 
   const id = encode(core.key)
@@ -37,7 +37,7 @@ test('decodes an unencoded key', async t => {
 })
 
 test('isValid valid keys', async t => {
-  const core = new Hypercore(ram)
+  const core = new Spacecore(ram)
   await core.ready()
 
   t.ok(isValid(core.key), 'buffer key')
