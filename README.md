@@ -1,6 +1,6 @@
 # spacecore-id-encoding
 
-Encodes Hypercore keys into z-base32 ids, and decodes both hex/z-base32 strings.
+Encodes Spacecore keys into z-base32 ids, and decodes both hex/z-base32 strings.
 
 ```
 npm install spacecore-id-encoding
@@ -14,8 +14,8 @@ const { encode, decode, normalize } = require('spacecore-id-encoding')
 const id = encode(core.key) // (z-base32 String)
 const hexEncoded = core.key.toString('hex')
 
-const core = new Hypercore(ram, decode(id)) 
-const core2 = new Hypercore(ram, decode(hexEncoded)) // Will also work with hex
+const core = new Spacecore(ram, decode(id)) 
+const core2 = new Spacecore(ram, decode(hexEncoded)) // Will also work with hex
 
 const id2 = normalize(id)
 const id3 = normalize(hexEncoded)
@@ -25,13 +25,13 @@ const id3 = normalize(hexEncoded)
 
 #### `const id = encode(spacecoreKey)`
 
-Encodes a 32-byte Hypercore key into a z-base32 id.
+Encodes a 32-byte Spacecore key into a z-base32 id.
 
 `spacecoreKey` must be a Buffer or an ArrayBuffer.
 
 #### `const buf = decode(spacecoreId)`
 
-Decodes an id or pear link into a Hypercore key.
+Decodes an id or pear link into a Spacecore key.
 
 If `spacecoreId` is a 52-character String, it will be decoded as z-base32.
 

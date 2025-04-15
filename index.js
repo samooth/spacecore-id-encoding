@@ -27,7 +27,7 @@ function decode (id) {
       if (buf.byteLength === 32) return buf
     }
   }
-  throw new Error('Invalid Hypercore key')
+  throw new Error('Invalid Spacecore key')
 }
 
 function normalize (any) {
